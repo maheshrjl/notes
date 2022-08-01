@@ -1,1 +1,36 @@
-# notes
+---
+cover: >-
+  https://images.unsplash.com/photo-1629654297299-c8506221ca97?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxMaW51eCUyMHN1ZG98ZW58MHx8fHwxNjUzNDk4Nzk2&ixlib=rb-1.2.1&q=80
+coverY: 0
+layout: landing
+---
+
+# 👋 Hi!
+
+## Welcome to Maheshrjl's Notes!
+
+#### Thanks for stopping by. This website a place for me to document my  favorite tools.&#x20;
+
+Everything is a [work in progress](https://www.merriam-webster.com/dictionary/work%20in%20progress). You can read more about me on my [about page](https://maheshrjl.com/about).
+
+## See my Technical Docs[​](https://theochu.com/#technical-docs) <a href="#technical-docs" id="technical-docs"></a>
+
+{% content-ref url="ansible/" %}
+[ansible](ansible/)
+{% endcontent-ref %}
+
+{% content-ref url="aws.md" %}
+[aws.md](aws.md)
+{% endcontent-ref %}
+
+{% content-ref url="docker.md" %}
+[docker.md](docker.md)
+{% endcontent-ref %}
+
+{% content-ref url="linux.md" %}
+[linux.md](linux.md)
+{% endcontent-ref %}
+
+{% content-ref url="terraform.md" %}
+[terraform.md](terraform.md)
+{% endcontent-ref %}
