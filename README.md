@@ -13,14 +13,14 @@ layout: landing
 
 Everything is a [work in progress](https://www.merriam-webster.com/dictionary/work%20in%20progress). You can read more about me on my [about page](https://maheshrjl.com/about).
 
-## See my Technical Docs[​](https://theochu.com/#technical-docs) <a href="#technical-docs" id="technical-docs"></a>
+## See my Technical Docs <a href="#technical-docs" id="technical-docs"></a>
 
 {% content-ref url="ansible/" %}
 [ansible](ansible/)
 {% endcontent-ref %}
 
-{% content-ref url="aws.md" %}
-[aws.md](aws.md)
+{% content-ref url="aws/" %}
+[aws](aws/)
 {% endcontent-ref %}
 
 {% content-ref url="docker.md" %}

@@ -1,5 +1,5 @@
 ---
-description: 'Ansible Ad-Hoc command cheat sheet:'
+description: Ansible Ad-Hoc command and playbook options
 ---
 
 # 🔄 Ansible
