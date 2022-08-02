@@ -1,7 +1,7 @@
 ---
 cover: >-
   https://images.unsplash.com/photo-1629654297299-c8506221ca97?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwyfHxCYXNofGVufDB8fHx8MTY1OTQ2NjQxNw&ixlib=rb-1.2.1&q=80
-coverY: 0
+coverY: -180.2208588957055
 layout: landing
 ---
 
@@ -25,6 +25,10 @@ Everything is a [work in progress](https://www.merriam-webster.com/dictionary/wo
 
 {% content-ref url="docker.md" %}
 [docker.md](docker.md)
+{% endcontent-ref %}
+
+{% content-ref url="go.md" %}
+[go.md](go.md)
 {% endcontent-ref %}
 
 {% content-ref url="linux.md" %}
