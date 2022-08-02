@@ -1,6 +1,6 @@
 ---
 cover: >-
-  https://images.unsplash.com/photo-1629654297299-c8506221ca97?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxMaW51eCUyMHN1ZG98ZW58MHx8fHwxNjUzNDk4Nzk2&ixlib=rb-1.2.1&q=80
+  https://images.unsplash.com/photo-1629654297299-c8506221ca97?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwyfHxCYXNofGVufDB8fHx8MTY1OTQ2NjQxNw&ixlib=rb-1.2.1&q=80
 coverY: 0
 layout: landing
 ---
