@@ -1,14 +1,5 @@
 # 🐬 Ansible Snippets
 
-#### Remove tty requirements with ssh\_pipelining disabled
-
-```yaml
-- lineinfile:
-    dest: /etc/sudoers
-    line: 'Defaults requiretty'
-    state: absent
-  sudo_user: root
-  vars:
-      ansible_ssh_pipelining: no
-```
-
+{% embed url="https://gist.github.com/maheshrjl/842f953a2714d0f7004c1b99aa37cc32" %}
+Useful ansible snippets :sparkling\_heart:
+{% endembed %}
