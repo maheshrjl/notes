@@ -102,3 +102,36 @@ Image contains applications binaries, dependencies for the app along with metada
 * Create a network: `docker network create --driver`
 * Attach a network to a container: `docker network connect`
 * Detach a network from container: `docker network disconnect`
+
+## Storage in Docker
+
+### Data Volumes:
+
+Creating a named volume at runtime
+
+* `-v` : Specify new/existing volumes on docker run
+
+```shell
+docker container run -d --name mysqlnamedvol -e MYSQL_ALLOW_EMPTY_PASSWORD=TRUE -v mysql-db:/var/lib/mysql mysql
+```
+
+{% hint style="info" %}
+Custom drivers & driver options can be specified only if docker volume is created with the volume command.&#x20;
+
+Eg: docker volume create&#x20;
+{% endhint %}
+
+### Bind Mounts:&#x20;
+
+Maps the host files/directories to a container files/directory i.e. Two locations pointing to the same files.
+
+> Bind mounts cannot be used in **Dockerfile**, must be used at container run
+
+{% hint style="info" %}
+Bind mount starts as / whereas volume mount starts without
+{% endhint %}
+
+Bind Mount Eg:
+
+* Mac/Linux: `... run -v /Users/mhs/stuff:/path/container`
+* Windows: `... run -v //c/Users/mhs/stuff:/path/container`
