@@ -6,6 +6,6 @@
 * [🌐 AWS](aws/README.md)
   * [🚦 CLI](aws/cli.md)
 * [🚀 Docker](docker.md)
-* [👨💻 Golang](go.md)
+* [👨💻 Go](go.md)
 * [💻 Linux](linux.md)
 * [🔬 Terraform](terraform.md)

@@ -1,4 +1,4 @@
-# 🦍 Golang
+# 👨💻 Go
 
 ### Functions
 
@@ -105,3 +105,46 @@ A closure is a function value that references variables from outside its body
 // Work in Progress
 ```
 
+## Data Structures
+
+### Array
+
+An array type defiiniation specifies a length and an element type. Eg: `4[int]` represents an array of 4 integers.&#x20;
+
+* Size of an array is fixed and it's length is a part of it's type (`[4]int` and `[5]int` are distinct, incompatible types.
+* Arrays do not need to be initalized explicitly, an unassigned array will have a 0 value.
+
+#### Initalizing Array:
+
+```go
+name := [2]string{"Mahesh","Rijal"}
+```
+
+or
+
+```go
+name := [...]string{"Mahesh","Rijal"}
+```
+
+### Slices
+
+Array has a fixed size. But, slices are dynamically sized. [Slices](https://go.dev/blog/slices-intro) support `append` and `copy` functions
+
+#### Create a empty slice with make
+
+```go
+s := make([]string, 3)
+```
+
+The `make` function allocates a zeroed array and returns a slice that refers to that array
+
+### Struct
+
+A struct is a sequence of named elements, called fields, each of which has a name & type.
+
+```go
+type Rectangle struct{
+    Width float64
+    Height float64
+}
+```

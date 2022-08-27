@@ -135,3 +135,15 @@ Bind Mount Eg:
 
 * Mac/Linux: `... run -v /Users/mhs/stuff:/path/container`
 * Windows: `... run -v //c/Users/mhs/stuff:/path/container`
+
+## Docker Compose
+
+Docker-compose reads configuration data from a YAML file, **** compose is not a production grade tool but ideal for local development & test.
+
+#### Docker Compose Commands:
+
+* `docker-compose up` : Setup volumes/networks & start all containers&#x20;
+* `docker-compose down`: Stop all containers & remove containers/volume/networks
+* `docker-compose ps`: List all running containers
+* `docker-compose top` : View processes running inside a container
+* `docker-compose --help` : Show help for docker compose
