@@ -9,3 +9,4 @@
 * [👨💻 Go](go.md)
 * [💻 Linux](linux.md)
 * [🔬 Terraform](terraform.md)
+* [📙 Glossary](glossary.md)
