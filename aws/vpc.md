@@ -164,3 +164,84 @@ Common VPC issues:
 * Provisions a gateway & must be used as a target in a route table. (Does not use security group)
 * Supports only **S3 & DynamoDB.**
 * It's a free service
+
+### VPC Flow Logs
+
+Capture information about IP traffic going into VPCs, Subnets & ENI
+
+Flow logs can be used to monitor & troubleshoot connectivity issues
+
+Flow logs data can go to S3 / Cloudwatch logs
+
+Captures information from AWS managed interfaces like ELB, RDS, ElastiCache, Redshift, Workspaces, Transit Gateway
+
+Logs can be queries using Athena(For data stored in S3) or CloudWatch Logs insights
+
+{% hint style="info" %}
+**Incoming Requests:**
+
+Inbound Reject =>NACL or SG
+
+Inbound Accept, Outbound Reject => NACL (Because SG is stateful)
+
+**Outgoing Requests:**
+
+Outbound Reject => NACL OR SG
+
+Outbound Accept, Inbound Reject => NACL
+{% endhint %}
+
+### Site to Site VPN
+
+A Site to Site VPN is used to connect on premise data center to AWS
+
+* On-prem Data Center will have a **Customer Gateway**
+* VPC will have a **VPN Gateway**
+* A private **site to site VPN** will be connected through the public internet
+
+Site to Site VPN has the following pre-requisits:&#x20;
+
+#### Virtual Private Gateway (VGW)
+
+* VPN concentrator on the AWS Side
+* VGW is created and connected to the VPC from which we want to create the site-to-site VPN Connection
+
+#### Customer Gateway (CGW)
+
+* Software application or physical device on the customer side of the VPN Connection
+* If  the CGW has a public IP it can be used for connection
+* If the CGW is behind a NAT device enabled for **NAT-T**, public IP of NAT device can be used for connection
+
+{% hint style="info" %}
+**Route Propagation** for Virtual Private Gateway (VGW) must eb enabled the route table associated with the subnet.&#x20;
+{% endhint %}
+
+To enable ping on EC2 instances, from on-premise, inbound ICMP must be enabled on the security group.
+
+#### AWS VPN CloudHub
+
+Provide secure communication between multiple sites, when multiple VPN connections are present
+
+Low cost hub & spoke model for primary or secondary network connectivity between multiple locations (Only using VPN)
+
+All traffic goes over the public internet
+
+To set it up connect multiple VPN connections on the same VGW, setup dynamic routin and configure route tables.
+
+### AWS Direct Connect  (DX)
+
+Provides a dedicated **private** connection from a remote network to a VPC
+
+Dedicated connection must be setup between on-prem DC & AWS Direct Connection locations.
+
+A [Virtual Private Gateway](vpc.md#virtual-private-gateway-vgw) is required on the VPC
+
+Access public resource (S3) & private resources (EC2) on the same connection
+
+Use cases:&#x20;
+
+* Increased throughput, lower cost as connection don't go through internet
+* More consistent network experience
+* Hybrid Environment support
+* Support IPv4 & IPv6
+
