@@ -38,6 +38,8 @@ Eg: (10.0.0.0/24)
 4. 10.0.0.3 - Reserved by AWS for future use
 5. 10.0.0.255 - Reserved network broadcast address. AWS does not support broadcast in a VPC.
 
+> If EC2 instance launch is failing in a subnet it could be becase there are no IPv4 addresses available in the subnet. The solution would be to **create a new IPv4 CIDR** in the subnet.
+
 ### Internet Gateway
 
 Allows resources in a VPC to connect to the internet. It must be created seperately from a VPC.&#x20;
@@ -245,3 +247,109 @@ Use cases:&#x20;
 * Hybrid Environment support
 * Support IPv4 & IPv6
 
+{% hint style="info" %}
+Lead times for Direct Connect are often longer than 1 month to establish a new connection.
+{% endhint %}
+
+Data in transit through direct connect is not encrypted by default.&#x20;
+
+AWS Direct Connect + VPN provides an IPsec encrypted connection
+
+#### Resiliency for Direct Connect:&#x20;
+
+#### High Resiliency for critical workloads:&#x20;
+
+* Multiple Direct Connect are setup in multiple data centres in case 1 direct connect location is down&#x20;
+
+#### Maximum Resiliency for critical workloads:
+
+* We have 2 direct connect locations but, each direct connect location will have 2 independent connections.
+
+{% hint style="info" %}
+**Maxium Resilience** is achieved by separate connections terminating on seperate devices in more than one location.
+{% endhint %}
+
+> In case Direct Connect fails, we can set up a backup Direct Connect connection (expensive), or a [Site-to-Site VPN](vpc.md#site-to-site-vpn) connection(Routed through public internet in case of Direct Connect Failure).&#x20;
+
+### Transit Gateway
+
+For having transitive  peering between thousands of VPCs & on-premises. (Hub & Spoke or STAR connection) (Without VPC peering)
+
+Regional resources, works across regions
+
+Share cross-account using Resource Access Manager (RAM)
+
+Transit Gateways can be peered across region
+
+Route tables should be created to limit which VPC can talk with other VPC
+
+Works with Direct Connect Gateway, VPN Connections
+
+Support **IP Multicast** (Not supported by any other AWS service)
+
+{% hint style="info" %}
+Transit Gateway can be used to increase the bandwidth of Site to Site VPN connections using **Equal Cost multi-path routing** (**ECMP**)
+
+* Routing strategy to allow to forawrd a packet over multiple best path
+{% endhint %}
+
+> Transit Gateway can be used to share Direct Connect between multiple accounts.
+
+### VPC Traffic Mirroring
+
+Allows to capture & inspect network traffic in a VPC&#x20;
+
+Traffic can be routed to security appliances managed by customer
+
+Traffic is capture from source ENI & sent to an ENI or Network Load Balancer
+
+Selective packet capture can be enabled
+
+Source & Target can the same VPC or different VPC (VPC Peering)
+
+Use case: Content inspection, thread monitoring & troubleshooting.
+
+### Egress only Internet Gateway
+
+Used for IPv6 only (Similar to [NAT Gateway](vpc.md#nat-gateway) but for IPv6).
+
+Allow instances in a VPC for outbound connections over IPv6 while preventing the internet to initiate an IPv6 connection the the instance.&#x20;
+
+Route tables must be updated.&#x20;
+
+### Networking Cost in AWS
+
+* Incoming traffic into EC2 instances is free
+* If EC2 instances are using private IP to communicate within a VPC, this is free
+* If EC2 instances want to communicate across AZs either a Public IP ($0.02 per GB) or ($0.01 per GB) if using private IP.
+* Inter region traffic is charged at $0.02 per GB
+
+Use same AZ for maximum savings (at the cost high availablility)
+
+Use private IP instead of Public IP for good savings & better performance
+
+Ingress traffic is typically free
+
+For Direct Connect choosing locations that are co-located in the same AWS region results lower cost for egress network.&#x20;
+
+#### S3 Data Transfer Price
+
+Ingress is free
+
+S3 to internet $0.09 per GB
+
+S3 to cloudfront is free
+
+Cloudfront to Internet $0.085 per GB (slightly cheaper than S3)
+
+S3 cross region replication $0.02 per GB
+
+### AWS Network Firewall
+
+Protect your entire VPC from layer 3 - 7
+
+Internally AWS Network Firewall uses the AWS Gateway Load Balancer
+
+Rules can be centraly managed cross account by AWS Firewall Manager
+
+Active flow inspection to protect against network threats with  intrusion prevention capabilities (like Gateway Load Balancer, but managed by AWS)
