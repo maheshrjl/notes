@@ -122,3 +122,45 @@ NACL Rules:&#x20;
 Security group is stateful, i.e whatever traffic is accepted is allowed to go out. Only inbound traffic is evaluated.
 
 Security group operates at the instance level and supports allow rules only.&#x20;
+
+### VPC Perring
+
+Privately connect to 2 VPCs using AWS network
+
+VPC network CIDR should not overlap.&#x20;
+
+VPC peering connection is not transitive i.e. Peering must be enabled for each VPC that needs to communicate with each other.
+
+Route tables must be updated in each VPCs subnet to ensure EC2 instances can communicate with each other.&#x20;
+
+VPC Peering can happen across AWS accounts and regions.
+
+We can reference a security group in a peered VPC (works across accounts in the same region).
+
+### VPC Endpoints
+
+VPC Endpoints are powered by AWS PrivateLink, allow you to connect to AWS service using a private network instead of using internet.
+
+VPC Endpoints are redundant & scale horizontally.
+
+They remove the need if IGW, NATGW to access AWS service.
+
+Common VPC issues:
+
+* DNS setting resolution of VPC
+* Route tables
+
+#### Types of VPC Endpoints:
+
+#### Interface Endpoints
+
+* Powered by PrivateLink
+* Provisions a ENI (private IP) as an entry point. Security groups must be attached to this ENI.
+* Costs per hour & per GB of data processed.
+* Interface Endpoint is preferred when access is required from on-premise VPN/Direct connect, a different VPC or region.
+
+#### Gateway Endpoints
+
+* Provisions a gateway & must be used as a target in a route table. (Does not use security group)
+* Supports only **S3 & DynamoDB.**
+* It's a free service
