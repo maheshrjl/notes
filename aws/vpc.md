@@ -42,9 +42,14 @@ Eg: (10.0.0.0/24)
 
 ### Internet Gateway
 
-Allows resources in a VPC to connect to the internet. It must be created seperately from a VPC.&#x20;
+An internet gateway is a horizontally scaled, redundant, and highly available VPC component that allows communication between your VPC and the internet.
 
-One VPC can only be attached to One IGW & vice versa.&#x20;
+* One VPC can only be attached to One IGW & vice versa.&#x20;
+* Support IPv4 & IPv6&#x20;
+* Internet resources can initiate a connection to resources in your subnet using the public IPv4 or IPv6 address
+* Internet gateway is free of charge (Outbound traffic is charged)
+
+Internet gateway enables resources in your **public subnets** (such as EC2 instances) to connect to the internet if the resource has a public IPv4 address or an IPv6 address.
 
 {% hint style="info" %}
 Internet gateway's do not allow internet access on their own. [Route tables](https://app.gitbook.com/s/d8qGZNNEP3vhnf91dxDT/\~/changes/fq73XzQhOre23mAFHreJ/aws/vpc#route-table) must be configured for internet access.
@@ -54,9 +59,10 @@ Internet gateway's do not allow internet access on their own. [Route tables](htt
 
 Define & configure traffic route to & from the subnet.&#x20;
 
-Public route tables are mapped to public route tables and private route tables are mapped to private subnets.
+* Public route tables are mapped to public subnets and private route tables are mapped to private subnets.
+* Routes must be configred for Route tables.&#x20;
 
-Routes must be configred for Route tables. Eg: For a public route table any traffic that does not match the subnet (local ip) should be going to the IGW.&#x20;
+Eg: For a public route table any traffic that does not match the subnet (local ip) should be going to the IGW.&#x20;
 
 ### Bastion Host
 
@@ -84,17 +90,15 @@ NAT Instance can be used as a bastion host.&#x20;
 
 ### NAT Gateway
 
-AWS managed NAT, it has high badnwidth and high availability.&#x20;
+Enable instances present in a private subnet to help connect to the internet or AWS services.
 
-Pay per hour for usage and bandwidth. Supports upto 45 Gbps bandwidth.&#x20;
+NAT gateway makes sure that the internet doesn’t initiate a connection with the instances. NAT Gateway service is a fully managed service by AWS.&#x20;
 
-NATGW is created in a specifc AZ, it uses a elastic IP.&#x20;
-
-Can't be used by a EC2 instance in the same subnet.&#x20;
-
-NAT Gateway cannot be used as a bastion host.&#x20;
-
-Routes must be edited in the route table to allow traffic to the internet gateway.
+* Pay per hour for usage and bandwidth. Supports upto 45 Gbps bandwidth.&#x20;
+* NATGW is created in a specifc AZ, it uses a elastic IP.&#x20;
+* Can't be used by a EC2 instance in the same subnet.&#x20;
+* NAT Gateway cannot be used as a bastion host.&#x20;
+* Routes must be edited in the route table to allow traffic to the internet gateway.
 
 {% hint style="info" %}
 Traffic route: IGW (Private Subnet -> NATGW -> IGW)
@@ -236,7 +240,7 @@ Provides a dedicated **private** connection from a remote network to a VPC
 
 Dedicated connection must be setup between on-prem DC & AWS Direct Connection locations.
 
-A [Virtual Private Gateway](vpc.md#virtual-private-gateway-vgw) is required on the VPC
+A [Virtual Private Gateway](https://notes.maheshrjl.com/aws/vpc#virtual-private-gateway-vgw) is required on the VPC
 
 Access public resource (S3) & private resources (EC2) on the same connection
 
@@ -269,7 +273,7 @@ AWS Direct Connect + VPN provides an IPsec encrypted connection
 **Maxium Resilience** is achieved by separate connections terminating on seperate devices in more than one location.
 {% endhint %}
 
-> In case Direct Connect fails, we can set up a backup Direct Connect connection (expensive), or a [Site-to-Site VPN](vpc.md#site-to-site-vpn) connection(Routed through public internet in case of Direct Connect Failure).&#x20;
+> In case Direct Connect fails, we can set up a backup Direct Connect connection (expensive), or a [Site-to-Site VPN](https://notes.maheshrjl.com/aws/vpc#site-to-site-vpn) connection(Routed through public internet in case of Direct Connect Failure).&#x20;
 
 ### Transit Gateway
 
@@ -311,7 +315,7 @@ Use case: Content inspection, thread monitoring & troubleshooting.
 
 ### Egress only Internet Gateway
 
-Used for IPv6 only (Similar to [NAT Gateway](vpc.md#nat-gateway) but for IPv6).
+Used for IPv6 only (Similar to [NAT Gateway](https://notes.maheshrjl.com/aws/vpc#nat-gateway) but for IPv6).
 
 Allow instances in a VPC for outbound connections over IPv6 while preventing the internet to initiate an IPv6 connection the the instance.&#x20;
 
