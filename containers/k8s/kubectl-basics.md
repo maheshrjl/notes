@@ -78,7 +78,15 @@ A pod always runs on a node
 kubectl get nodes
 ```
 
+### Jobs
 
+A **job** **in** **Kubernetes** is a supervisor for pods that run for a certain time to completion, for example a calculation or a backup operation.
+
+* The container will not restart on termination
+
+#### Create a Job
+
+<pre class="language-yaml"><code class="lang-yaml"><strong>kubectl create job test-job --image=nginx</strong></code></pre>
 
 ## Namespaces
 
@@ -163,3 +171,17 @@ This also deletes the default kubernetes(ClusterIP) service but it is re-created
 | `-o=yaml`     | Output a YAML formatted API object                                                                       |
 | `-o=name`     | Print only the resource name and nothing else                                                            |
 | `-o=wide`     | Output in the plain-text format with any additional information, and for pods, the node name is included |
+
+### Generators
+
+* While running kubectl commands some default values are auto populated & executed when changes are applied.&#x20;
+* To view what changes will be applies `--dry-run -o=yaml` can be used
+
+Eg:&#x20;
+
+```yaml
+kubectl create deployment test --image=nginx --dry-run -o=yaml
+```
+
+<pre class="language-yaml"><code class="lang-yaml"><strong>kubectl create job test-job --image=nginx --dry-run -o=yaml</strong></code></pre>
+

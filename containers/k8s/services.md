@@ -54,3 +54,20 @@ NodePort service will allow connecting from outside the kubernetes cluster
 ```
 kubectl expose deployment k8s-hello --type=LoadBalancer --port=3000
 ```
+
+### ExternalName
+
+* Adds CNAME records to CoreDNS&#x20;
+* You specify these Services with the \`spec.externalName\` parameter.
+* It maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value.
+* No proxying of any kind is established.
+
+#### Use Cases <a href="#c08f" id="c08f"></a>
+
+* This is commonly used to create a service within Kubernetes to represent an external datastore like a database that runs externally to Kubernetes.
+
+### Service DNS&#x20;
+
+*   Services in kubernetes have FQDN to communicate across namespaces. This DNS can resolve inside the kubernetes cluster only.
+
+    Format: `<hostname>.<namespace>.svc.cluster.local`

@@ -24,5 +24,5 @@
 
 ## IaC
 
-* [Ansible](iac/ansible.md)
+* [Ansible](ansible/README.md)
 * [Terraform](terraform.md)
