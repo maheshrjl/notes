@@ -2,7 +2,7 @@
 description: Ansible Ad-Hoc command and playbook options
 ---
 
-# Ansible
+# 🔄 Ansible
 
 ## Ad-Hoc Commands
 

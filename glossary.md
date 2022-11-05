@@ -20,13 +20,9 @@
 
 **- Idempotent** - Idempotent operation has no additional effect if it is called more than once with the same input parameters
 
-**- Declarative** - Configuration explicitly specified in the code, uses scripting language like JSON & YAML
+**- Declarative** - With a declarative tool, **user defines the desired state of the final solution**, and the automation platform determines how to achieve that state. uses scripting language like JSON & YAML. Terraform is declerative.
 
-**- Imperative** - Configuration is implicit, you say what you want & rest is filled in. Used with programming languages Python, Ruby, Javascript
-
-\*\*Declarative\*\* vs \*\*Imperative\*\*
-
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1648481256131/Kss0T5nGW.png)
+**- Imperative** - With an imperative tool, **user defines the steps to execute in order** to reach the desired solution. Used with programming languages Python, Ruby, Javascript
 
 **- Provisioning** - Creating Infrastructure i.e. compute, storage containers, etc.
 
