@@ -14,26 +14,26 @@ Everything is a [work in progress](https://www.merriam-webster.com/dictionary/wo
 
 ## See my Technical Docs <a href="#technical-docs" id="technical-docs"></a>
 
-{% content-ref url="ansible/" %}
-[ansible](ansible/)
+{% content-ref url="iac/ansible/" %}
+[ansible](iac/ansible/)
 {% endcontent-ref %}
 
 {% content-ref url="aws/" %}
 [aws](aws/)
 {% endcontent-ref %}
 
-{% content-ref url="containers/docker.md" %}
-[docker.md](containers/docker.md)
+{% content-ref url="docker.md" %}
+[docker.md](docker.md)
 {% endcontent-ref %}
 
 {% content-ref url="go.md" %}
 [go.md](go.md)
 {% endcontent-ref %}
 
-{% content-ref url="linux/" %}
-[linux](linux/)
+{% content-ref url="os/linux/" %}
+[linux](os/linux/)
 {% endcontent-ref %}
 
-{% content-ref url="terraform.md" %}
-[terraform.md](terraform.md)
+{% content-ref url="iac/terraform.md" %}
+[terraform.md](iac/terraform.md)
 {% endcontent-ref %}
