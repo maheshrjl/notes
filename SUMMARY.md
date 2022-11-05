@@ -17,13 +17,13 @@
 
 ## Operating Systems <a href="#os" id="os"></a>
 
-* [Linux](os/linux/README.md)
+* [Linux](linux.md)
   * [web-requests](os/linux/web-requests.md)
   * [find & replace](os/linux/find-and-replace.md)
 * [Windows](os/windows.md)
 
 ## IaC
 
-* [Ansible](iac/ansible/README.md)
-  * [Ansible Snippets](iac/ansible/ansible-snippets.md)
-* [Terraform](iac/terraform.md)
+* [Ansible](ansible/README.md)
+  * [Ansible Snippets](ansible/ansible-snippets.md)
+* [Terraform](terraform.md)
