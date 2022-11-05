@@ -94,6 +94,6 @@ Annotations are used to store data about the resource itself. This usually consi
 * managed by&#x20;
 * sidecar injection configuration
 
-## Short Names
+## abbreviations
 
-<table><thead><tr><th>Long Name</th><th>Short Name</th><th data-hidden></th></tr></thead><tbody><tr><td>services</td><td>svc</td><td></td></tr><tr><td>deployment</td><td>deploy</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Long</th><th>Short</th><th data-hidden></th></tr></thead><tbody><tr><td>services</td><td>svc</td><td></td></tr><tr><td>deployment</td><td>deploy</td><td></td></tr></tbody></table>

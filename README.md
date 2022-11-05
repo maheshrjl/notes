@@ -22,16 +22,16 @@ Everything is a [work in progress](https://www.merriam-webster.com/dictionary/wo
 [aws](aws/)
 {% endcontent-ref %}
 
-{% content-ref url="docker.md" %}
-[docker.md](docker.md)
+{% content-ref url="containers/docker.md" %}
+[docker.md](containers/docker.md)
 {% endcontent-ref %}
 
 {% content-ref url="go.md" %}
 [go.md](go.md)
 {% endcontent-ref %}
 
-{% content-ref url="linux.md" %}
-[linux.md](linux.md)
+{% content-ref url="linux/" %}
+[linux](linux/)
 {% endcontent-ref %}
 
 {% content-ref url="terraform.md" %}
