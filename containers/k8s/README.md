@@ -1,5 +1,7 @@
 # Kubernetes
 
+[Official kubectl  cheatsheet ](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+
 ## Introduction
 
 * Kubernetes is container orchestrator making many servers act like one.
@@ -29,7 +31,7 @@
 
 **`Kubelet`** - Kubernetes agent running on every node.
 
-**`Control Plane`** - A set of container that manage the clusters(Also called master). Similar to manager in swarm. It includes API server, scheduler, controller manager, etcd
+**`Control Plane`** - A set of container that manage the clusters(Also called master). Similar to manager in swarm. It includes `API server`, `scheduler`, `controller manager`, `etcd`, `coredns`
 
 **`Pod`** - One or more container running together on one node. It is abstraction of a container. Containers are always in pods. Pods can be deployed directly (without containers) but it is not recommended.
 
@@ -96,4 +98,5 @@ Annotations are used to store data about the resource itself. This usually consi
 
 ## abbreviations
 
-<table><thead><tr><th>Long</th><th>Short</th><th data-hidden></th></tr></thead><tbody><tr><td>services</td><td>svc</td><td></td></tr><tr><td>deployment</td><td>deploy</td><td></td></tr></tbody></table>
+<table><thead><tr><th>Long</th><th>Short</th><th data-hidden></th></tr></thead><tbody><tr><td>services</td><td>svc</td><td></td></tr><tr><td>deployment</td><td>deploy</td><td></td></tr><tr><td><code>--all-namespaces</code></td><td>-A</td><td></td></tr></tbody></table>
+

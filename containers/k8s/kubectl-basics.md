@@ -154,3 +154,12 @@ kubectl delete all --all
 {% hint style="info" %}
 This also deletes the default kubernetes(ClusterIP) service but it is re-created automatically
 {% endhint %}
+
+### kubectl output formatting
+
+| Output format | Description                                                                                              |
+| ------------- | -------------------------------------------------------------------------------------------------------- |
+| `-o=json`     | Output a JSON formatted API object                                                                       |
+| `-o=yaml`     | Output a YAML formatted API object                                                                       |
+| `-o=name`     | Print only the resource name and nothing else                                                            |
+| `-o=wide`     | Output in the plain-text format with any additional information, and for pods, the node name is included |

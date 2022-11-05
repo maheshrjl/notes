@@ -1,4 +1,4 @@
-# Terraform
+# 🔬 Terraform
 
 {% hint style="info" %}
 Install terraform autocomplete - \`**`` terraform -install-autocomplete` ``**
