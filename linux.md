@@ -1,4 +1,4 @@
-# 💻 Linux
+# Linux
 
 ## <mark style="color:blue;">Find text in Files</mark>
 
