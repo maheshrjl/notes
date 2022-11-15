@@ -19,3 +19,21 @@ kubectl apply -f filename.yml
 ```
 kubectl delete -f filename.yml
 ```
+
+#### Create / update whole directory of yaml
+
+```
+kubectl apply -f mydir/
+```
+
+#### Apple from a URL
+
+```
+kubectl apply -f https://github.com/maheshrjl
+```
+
+#### List all the keys&#x20;
+
+```
+kubectl explain services --recursive
+```
