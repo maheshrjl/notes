@@ -26,14 +26,50 @@ kubectl delete -f filename.yml
 kubectl apply -f mydir/
 ```
 
-#### Apple from a URL
+#### Apply from a URL
 
 ```
 kubectl apply -f https://github.com/maheshrjl
 ```
 
+### Building YAML Spec
+
 #### List all the keys&#x20;
 
 ```
 kubectl explain services --recursive
+```
+
+#### List only subkeys
+
+```
+kubectl explain services.spec
+```
+
+#### List types of services
+
+```
+kubectl explain services.spec.type
+```
+
+### Dry Run
+
+#### Client side dry run
+
+```
+kubectl apply -f <file> --dry-run
+```
+
+#### Server side dry run
+
+```
+kubectl apply -f <file> --server-dry-run
+```
+
+### Diff
+
+Diff compares the current file with the spec deployed on the server
+
+```
+kubectl diff -f <file>
 ```

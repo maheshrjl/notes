@@ -50,7 +50,7 @@ ReplicaSets&#x20;
 
 ### Label
 
-Labels are key-value pairs assigned to Kubernetes Objects like Pods, Service
+Labels are key-value pairs assigned to Kubernetes Objects like Pods, Service. Labels go under `metadata:` in yaml
 
 Example labels:
 
