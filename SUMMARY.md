@@ -14,6 +14,7 @@
   * [kubectl basics](containers/k8s/kubectl-basics.md)
   * [services](containers/k8s/services.md)
   * [k8s & yaml](containers/k8s/k8s-and-yaml.md)
+  * [storage & routing](containers/k8s/storage-and-routing.md)
 
 ## Operating Systems <a href="#os" id="os"></a>
 
