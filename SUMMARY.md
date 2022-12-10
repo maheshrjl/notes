@@ -1,11 +1,13 @@
 # Table of contents
 
 * [👋 Hi!](README.md)
-* [🌐 AWS](aws/README.md)
-  * [🚦 CLI](aws/cli.md)
-  * [🔏 VPC](aws/vpc.md)
-* [👨💻 Go](go.md)
 * [📙 Glossary](glossary.md)
+
+## Cloud
+
+* [🌐 AWS](cloud/aws/README.md)
+  * [🚦 CLI](cloud/aws/cli.md)
+  * [🔏 VPC](cloud/aws/vpc.md)
 
 ## Containers
 
@@ -27,3 +29,8 @@
 
 * [Ansible](ansible/README.md)
 * [Terraform](terraform.md)
+
+## Programming
+
+* [👨💻 Go](programming/go/README.md)
+  * [Concepts](programming/go/concepts.md)
